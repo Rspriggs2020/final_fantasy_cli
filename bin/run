@@ -1,0 +1,13 @@
+#!/users/bin/env ruby
+
+#require environment file
+require_relative '../environment.rb'
+
+#require lib files
+
+API.get_data
+#Character.all 
+#binding.pry
+
+
+
