@@ -2,11 +2,11 @@ class Character
 
     @@all = []
 
-    attr_accessor :name, :description
+    attr_accessor :name, :job, :description
 
     def initialize(hash)
         hash.each do |k, v|
-            self.send(("#{k}="), v) if  self.respond_to?("#{k}=")
+          self.send(("#{k}="), v) if  self.respond_to?("#{k}=")
         end
         self.save
     end
@@ -17,9 +17,5 @@ class Character
 
     def save
         @@all << self
-    end
-
-    def print.all
-
     end
 end

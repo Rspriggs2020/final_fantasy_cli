@@ -6,8 +6,10 @@ require_relative '../environment.rb'
 #require lib files
 
 API.get_data
-#Character.all 
+Character.all 
+CLI.new.run
 #binding.pry
+
 
 
 
