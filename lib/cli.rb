@@ -1,4 +1,3 @@
-#command line interface
 class CLI 
     
     def run
@@ -6,50 +5,65 @@ class CLI
         puts "Welcome to the world of Final Fantasy!"
         puts " "
         puts "Are you ready to choose your Guardian?"
-        input = user_input
+        puts " "
+        puts " "
+        puts "To see the list of Guardians, enter 'y', or enter 'exit'."
+        API.get_data
         menu
     end
 
     def user_input
-        gets.strip
+        gets.strip.downcase
     end
 
     def menu
-       response = user_input
-        if response == "y"
+       case gets.strip.downcase
+       when "y"
             print_guardians
             menu
-        elsif response == "exit"
+       when "exit"
             goodbye
-        else
+       else
             invalid
         end
     end
 
     def goodbye
+        puts " "
         puts "May Yevon be with you."
+        puts " "
     end
 
     def invalid
+        puts " "
         puts "You've shaken up the Chocobos!"
+        puts " "
         menu
     end
 
     def print_guardians
        Character.all.each_with_index do |guardian, index|
-        puts "#{index}. #{guardian}"
+            puts "#{index + 1}. #{guardian.name}"
        end
-       select_guradian(selection)
-    end
-
-    def select_guardian
-        puts "please enter the name of the Guardian you would like to know more about."
-        selection = user_input
         puts " "
-    end
-
-    def guardian_details(guardian)
-        puts "#{guardian}."
+        puts " "
+        puts "To learn more, enter the name of the Guardian!"
+        input = gets.strip.downcase
+        select_guardian(input)
         menu
     end
+
+    def select_guardian(guardian)
+       char = Character.find_by_name(guardian)
+       char.each do |c|
+       puts " "
+       puts "Name: #{c.name}."
+       puts " "
+       puts "Job: #{c.job}."
+       puts " "
+       puts "Description: #{c.description}."
+       menu
+       end
+    end
 end
+

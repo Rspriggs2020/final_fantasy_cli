@@ -6,9 +6,9 @@ class API
     def self.get_data
         uri = URI.parse(URL)
         response = Net::HTTP.get_response(uri)
-        character_array = JSON.parse(response.body).
-        character_array.each do |c|
-            Character.new(c)
+        character_array = JSON.parse(response.body)
+        character_array.each do |character|
+            Character.new(character)
         end
     end
 end
