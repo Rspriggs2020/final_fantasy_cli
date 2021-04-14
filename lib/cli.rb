@@ -29,8 +29,7 @@ class CLI
 
     def goodbye
         puts " "
-        #edit eexit
-        puts "Thank you for your interest in the Guardians, each one has unique abilities and stroies creating a vast and in depth world."
+        puts "Thank you for your interest in the Guardians!"
         puts "May Yevon be with you."
         puts " "
     end
