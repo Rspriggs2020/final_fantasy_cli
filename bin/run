@@ -2,8 +2,8 @@
 
 require_relative '../environment.rb'
 
-API.get_data
-Character.all 
+#exiAPI.get_data
+#Character.all 
 CLI.new.run
 #binding.pry
 
