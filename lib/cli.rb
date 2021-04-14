@@ -30,6 +30,7 @@ class CLI
     def goodbye
         puts " "
         puts "Thank you for your interest in the Guardians!"
+        puts " "
         puts "May Yevon be with you."
         puts " "
     end
