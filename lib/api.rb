@@ -1,4 +1,3 @@
-#application programming interface
 class API
 
     URL = 'https://www.moogleapi.com/api/v1/characters'

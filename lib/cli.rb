@@ -20,7 +20,6 @@ class CLI
        case gets.strip.downcase
        when "y"
             print_guardians
-            #menu
        when "exit"
             goodbye
        else
@@ -30,6 +29,8 @@ class CLI
 
     def goodbye
         puts " "
+        #edit eexit
+        puts "Thank you for your interest in the Guardians, each one has unique abilities and stroies creating a vast and in depth world."
         puts "May Yevon be with you."
         puts " "
     end
@@ -37,7 +38,8 @@ class CLI
     def invalid
         puts " "
         puts "You've shaken up the Chocobos!"
-        #try again
+        puts " "
+        puts "Invalid Entry. To try again enter 'y' or enter 'exit'!"
         puts " "
         menu
     end
@@ -51,7 +53,6 @@ class CLI
         puts "To learn more, enter the name of the Guardian!"
         input = gets.strip.downcase
         select_guardian(input)
-        #menu
     end
 
     def select_guardian(guardian)
@@ -63,8 +64,6 @@ class CLI
        puts "Job: #{c.job}."
        puts " "
        puts "Description: #{c.description}."
-       #puts "To see the list again, enter 'y', or enter 'exit'!"
-       #menu
        end
        puts "To see the list again, enter 'y', or enter 'exit'!"
        menu
