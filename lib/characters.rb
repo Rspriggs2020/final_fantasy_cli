@@ -19,10 +19,6 @@ class Character
         @@all << self
     end
     
-    def self.destroy_all
-        @@all.clear
-    end
-
     def self.find_by_name(name)
         self.all.select do |guardian|
             guardian.name.downcase == name
